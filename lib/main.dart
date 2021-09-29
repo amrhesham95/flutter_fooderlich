@@ -6,10 +6,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  final theme = FooderlichTheme.light();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final theme = FooderlichTheme.light();
+
     return MaterialApp(
       title: 'Fooderlich',
       theme: theme,
@@ -38,6 +39,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+  static List<Widget> pages = <Widget>[
+    Container(color: Colors.red),
+    Container(color: Colors.green),
+    Container(color: Colors.blue)
+  ];
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,12 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title, style: widget.theme.textTheme.headline6,),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Text("Let\'s get cooking",
-            style: widget.theme.textTheme.headline1),
-      ),
+      body: pages[_selectedIndex],
       bottomNavigationBar: createBottomNavigation(createBarItems()),
     );
   }
@@ -65,6 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget createBottomNavigation(List<BottomNavigationBarItem> items) {
     return BottomNavigationBar(
+      currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         selectedItemColor: widget.theme.textSelectionTheme.selectionColor,
     items: items);
   }
