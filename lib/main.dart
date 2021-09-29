@@ -7,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final theme = FooderlichTheme.light();
+  final theme = FooderlichTheme.dark();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
