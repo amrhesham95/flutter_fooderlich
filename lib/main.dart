@@ -52,6 +52,22 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Text("Let\'s get cooking",
             style: widget.theme.textTheme.headline1),
       ),
+      bottomNavigationBar: createBottomNavigation(createBarItems()),
     );
   }
+
+  List<BottomNavigationBarItem> createBarItems() {
+    return <BottomNavigationBarItem>[
+      BottomNavigationBarItem(icon: Icon(Icons.card_giftcard), label: "Card1"),
+      BottomNavigationBarItem(icon: Icon(Icons.card_giftcard), label: "Card2"),
+      BottomNavigationBarItem(icon: Icon(Icons.card_giftcard), label: "Card3")];
+  }
+
+  Widget createBottomNavigation(List<BottomNavigationBarItem> items) {
+    return BottomNavigationBar(
+        selectedItemColor: widget.theme.textSelectionTheme.selectionColor,
+    items: items);
+  }
 }
+
+
