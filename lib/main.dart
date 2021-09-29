@@ -9,17 +9,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final theme = FooderlichTheme.dark();
+    final theme = FooderlichTheme.light();
     return MaterialApp(
       title: 'Fooderlich',
       theme: theme,
-      home: MyHomePage(title: 'Fooderlich'),
+      home: MyHomePage(title: 'Fooderlich', theme: theme),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  final ThemeData theme;
+  MyHomePage({Key? key, required this.title, required this.theme}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -43,12 +44,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text(widget.title, style: widget.theme.textTheme.headline6,),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Text("Let\'s get cooking"),
+        child: Text("Let\'s get cooking",
+            style: widget.theme.textTheme.headline1),
       ),
     );
   }
