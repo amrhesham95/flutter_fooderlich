@@ -23,10 +23,13 @@ class Card1 extends StatelessWidget {
             child: Text(description,
                 style: FooderlichTheme.darkTextTheme.bodyText1),
             bottom: 30,
+            right: 0,
           ),
           Positioned(
-              child: Text(chef, style: FooderlichTheme.darkTextTheme.bodyText1),
-              bottom: 10)
+            child: Text(chef, style: FooderlichTheme.darkTextTheme.bodyText1),
+            bottom: 10,
+            right: 0,
+          )
         ],
       ),
       padding: const EdgeInsets.all(16),
