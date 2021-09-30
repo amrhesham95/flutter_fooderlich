@@ -11,15 +11,23 @@ class Card1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-
-      child: Container(child:Stack(children: [ Text(category, style:
-      FooderlichTheme.darkTextTheme.bodyText1),
-        Text(title, style:
-        FooderlichTheme.darkTextTheme.headline5),
-        Text(description, style:
-        FooderlichTheme.darkTextTheme.bodyText1),
-        Text(chef, style:
-        FooderlichTheme.darkTextTheme.bodyText1)],
+        child: Container(
+      child: Stack(
+        children: [
+          Text(category, style: FooderlichTheme.darkTextTheme.bodyText1),
+          Positioned(
+            child: Text(title, style: FooderlichTheme.darkTextTheme.headline5),
+            top: 20,
+          ),
+          Positioned(
+            child: Text(description,
+                style: FooderlichTheme.darkTextTheme.bodyText1),
+            bottom: 30,
+          ),
+          Positioned(
+              child: Text(chef, style: FooderlichTheme.darkTextTheme.bodyText1),
+              bottom: 10)
+        ],
       ),
       padding: const EdgeInsets.all(16),
       constraints: const BoxConstraints.expand(width: 350, height: 450),
