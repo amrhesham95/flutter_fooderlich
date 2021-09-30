@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fooderlich/author_card.dart';
 // import 'fooderlich_theme.dart';
 
 class Card2 extends StatelessWidget {
+  const Card2({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -12,12 +14,12 @@ class Card2 extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/mag2.png"), fit: BoxFit.cover),
+              image: AssetImage("assets/mag5.png"), fit: BoxFit.cover),
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
         ),
         child: Column(
           children: [
-            // TODO 1: add author information
+            AuthorCard(authorName: "Amr Hesham", title: "Senior iOS", imageProvider: AssetImage("assets/author_katz.jpeg"))
             // TODO 4: add Positioned text
           ],
         ),

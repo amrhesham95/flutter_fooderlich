@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'card1.dart';
+import 'card2.dart';
 import 'fooderlich_theme.dart';
 
 void main() {
@@ -43,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   static List<Widget> pages = <Widget>[
     Card1(),
-    Container(color: Colors.green),
+    Card2(),
     Container(color: Colors.blue)
   ];
   void _onItemTapped(int index) {
