@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'fooderlich_theme.dart';
+
 class Card3 extends StatelessWidget {
   const Card3({Key? key}) : super(key: key);
   @override
@@ -16,7 +18,6 @@ class Card3 extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            // TODO 5: add dark overlay BoxDecoration
             Container(
               decoration: BoxDecoration(
                 color: Colors.black.withOpacity(0.6),
@@ -24,6 +25,20 @@ class Card3 extends StatelessWidget {
               ),
             ),
             // TODO 6: Add Container, Column, Icon and Text
+            Container(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Icon(Icons.book, color: Colors.white, size: 40),
+                  const SizedBox(height: 8),
+                  Text(
+                      'Recipe Trends',
+                      style: FooderlichTheme.darkTextTheme.headline2), // 9
+                  const SizedBox(height: 30),
+                ],
+              ),
+            ),
             // TODO 7: Add Center widget with Chip widge children
           ],
         ),
