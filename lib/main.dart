@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'card1.dart';
 import 'card2.dart';
 import 'fooderlich_theme.dart';
-
+import 'card3.dart';
 void main() {
   runApp(MyApp());
 }
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static List<Widget> pages = <Widget>[
     Card1(),
     Card2(),
-    Container(color: Colors.blue)
+    Card3(),
   ];
   void _onItemTapped(int index) {
     setState(() {

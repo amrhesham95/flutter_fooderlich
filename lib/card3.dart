@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Card3 extends StatelessWidget {
-  const Card3({required Key key}) : super(key: key);
+  const Card3({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -17,6 +17,12 @@ class Card3 extends StatelessWidget {
         child: Stack(
           children: [
             // TODO 5: add dark overlay BoxDecoration
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.6),
+                borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+              ),
+            ),
             // TODO 6: Add Container, Column, Icon and Text
             // TODO 7: Add Center widget with Chip widge children
           ],
