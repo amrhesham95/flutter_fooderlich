@@ -3,6 +3,7 @@ import 'components/card1.dart';
 import 'components/card2.dart';
 import 'fooderlich_theme.dart';
 import 'components/card3.dart';
+import 'models/explore_recipe.dart';
 void main() {
   runApp(MyApp());
 }
@@ -42,8 +43,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
+  static ExploreRecipe recipe1 = ExploreRecipe(
+      authorName: 'Ray Wenderlich',
+      title: 'The Art of Dough',
+      subtitle: 'Editors Choice',
+      message: 'Learn to make the perfect bread.',
+      backgroundImage: 'assets/magazine_pics/mag1.png');
+
   static List<Widget> pages = <Widget>[
-    Card1(),
+    Card1(recipe: recipe1),
     Card2(),
     Card3(),
   ];
