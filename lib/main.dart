@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'card1.dart';
-import 'card2.dart';
+import 'components/card1.dart';
+import 'components/card2.dart';
 import 'fooderlich_theme.dart';
-import 'card3.dart';
+import 'components/card3.dart';
 void main() {
   runApp(MyApp());
 }
